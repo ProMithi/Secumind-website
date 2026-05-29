@@ -5,17 +5,18 @@
 ───────────────────────────────────────────────────────────────── */
 
 :root {
-    --bg:           #07101e;
-    --bg-elev:      #0c1728;
-    --bg-soft:      rgba(255, 255, 255, 0.03);
-    --border:       rgba(255, 255, 255, 0.07);
-    --border-soft:  rgba(255, 255, 255, 0.04);
-    --text:         #e2e8f0;
-    --text-muted:   #94a3b8;
-    --text-dim:     #64748b;
-    --accent:       #6ee7b7;
-    --accent-dark:  #4ade80;
-    --accent-soft:  rgba(110, 231, 183, 0.1);
+    --bg:           #131112;
+    --bg-elev:      #1c1922;
+    --bg-soft:      rgba(249, 250, 251, 0.03);
+    --border:       rgba(249, 250, 251, 0.08);
+    --border-soft:  rgba(249, 250, 251, 0.05);
+    --text:         #f9fafb;
+    --text-muted:   #b3b7cc;
+    --text-dim:     #7d809a;
+    --accent:       #8093f1;
+    --accent-dark:  #0f2db9;
+    --accent-soft:  rgba(128, 147, 241, 0.12);
+    --mint:         #b4edd2;
     --danger:       #dc2626;
     --warning:      #ea580c;
     --medium:       #f59e0b;
@@ -74,23 +75,31 @@ p { color: var(--text-muted); }
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(7, 16, 30, 0.85);
+    background: rgba(19, 17, 18, 0.85);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
+    
 }
 
 .nav-inner {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 14px 24px;
+    width: 100%;
+    padding: 14px 40px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     gap: 24px;
+    /* HOW TO MOVE ITEMS (flexbox spacing trick):
+       The direct children below (.nav-brand and .nav-links) are flex items.
+       Add ONE of these to any item to slide it around:
+         margin-left: auto;   -> pushes THIS item + everything after it to the right
+         margin-right: auto;  -> pushes everything AFTER it to the right (this stays left)
+         margin: 0 auto;      -> centers this item
+       To reorder, either move the lines in index.html, or add `order: 1;`
+       (higher number = later) to an item here. */
 }
 
 .nav-brand {
+    margin-right: auto;          /* keeps the logo on the left, links on the right */
     font-size: 18px;
     font-weight: 800;
     letter-spacing: -0.5px;
@@ -143,7 +152,7 @@ p { color: var(--text-muted); }
 
 .btn-primary {
     background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-    color: #022c1c;
+    color: #f9fafb;
 }
 
 .btn-primary:hover {
@@ -204,8 +213,8 @@ section {
     padding: 96px 0 80px;
     border-bottom: 1px solid var(--border-soft);
     background:
-        radial-gradient(ellipse at top, rgba(110, 231, 183, 0.08), transparent 50%),
-        radial-gradient(ellipse at bottom right, rgba(110, 231, 183, 0.04), transparent 60%);
+        radial-gradient(ellipse at top, rgba(128, 147, 241, 0.10), transparent 50%),
+        radial-gradient(ellipse at bottom right, rgba(180, 237, 210, 0.06), transparent 60%);
 }
 
 .hero-inner {
@@ -219,7 +228,7 @@ section {
     display: inline-block;
     padding: 6px 14px;
     background: var(--accent-soft);
-    border: 1px solid rgba(110, 231, 183, 0.25);
+    border: 1px solid rgba(128, 147, 241, 0.25);
     border-radius: 999px;
     color: var(--accent);
     font-size: 12px;
@@ -230,7 +239,7 @@ section {
 
 .hero-title {
     margin-bottom: 20px;
-    background: linear-gradient(180deg, #fff 0%, #94a3b8 110%);
+    background: linear-gradient(180deg, #f9fafb 0%, #8093f1 120%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -269,7 +278,7 @@ section {
 
 .pillar:hover {
     transform: translateY(-3px);
-    border-color: rgba(110, 231, 183, 0.3);
+    border-color: rgba(128, 147, 241, 0.3);
 }
 
 .pillar-num {
@@ -420,9 +429,9 @@ section {
 }
 
 .tier.featured {
-    border-color: rgba(110, 231, 183, 0.45);
+    border-color: rgba(128, 147, 241, 0.45);
     position: relative;
-    background: linear-gradient(180deg, rgba(110, 231, 183, 0.05), var(--bg-elev) 40%);
+    background: linear-gradient(180deg, rgba(128, 147, 241, 0.06), var(--bg-elev) 40%);
 }
 
 .tier.featured::before {
@@ -432,7 +441,7 @@ section {
     left: 50%;
     transform: translateX(-50%);
     background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-    color: #022c1c;
+    color: #f9fafb;
     font-size: 11px;
     font-weight: 700;
     padding: 4px 12px;
@@ -486,7 +495,7 @@ section {
 /* ── Final CTA ─────────────────────────────────────────────────── */
 .cta-block {
     background:
-        radial-gradient(ellipse at center, rgba(110, 231, 183, 0.1), transparent 60%),
+        radial-gradient(ellipse at center, rgba(128, 147, 241, 0.12), transparent 60%),
         var(--bg-elev);
     border: 1px solid var(--border);
     border-radius: var(--radius);
@@ -530,7 +539,7 @@ section {
 .form-row input:focus,
 .form-row select:focus,
 .form-row textarea:focus {
-    border-color: rgba(110, 231, 183, 0.5);
+    border-color: rgba(128, 147, 241, 0.5);
 }
 
 .form-help { font-size: 12px; color: var(--text-dim); margin-top: 6px; }
