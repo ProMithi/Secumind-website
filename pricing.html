@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pricing — Secumind</title>
+    <meta name="description" content="Three tiers, bundled by pillar. No per-feature SKUs.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+    <div class="nav-inner">
+        <a href="index.html" class="nav-brand">Secu<span>mind</span></a>
+        <button class="nav-toggle" onclick="toggleNav()" aria-label="Open menu">☰</button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="product.html">Product</a></li>
+            <li><a href="pricing.html" class="active">Pricing</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html" class="btn btn-primary">Book a demo</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+
+<section class="hero" style="padding-top: 80px; padding-bottom: 56px;">
+    <div class="hero-inner">
+        <span class="hero-eyebrow">Pricing</span>
+        <h1 class="hero-title">Three tiers.<br>No per-feature SKUs.</h1>
+        <p class="hero-subtitle">
+            Each tier bundles outcomes, not à-la-carte features. Start where you are. Move up when you need to.
+        </p>
+    </div>
+</section>
+
+<section style="padding-top: 24px;">
+    <div class="container">
+        <div class="pricing-grid">
+
+            <!-- ─── SOLO ─── -->
+            <div class="tier">
+                <div class="tier-name">SOLO</div>
+                <div class="tier-tagline">For a single founder, indie consultant, or one-person security team.</div>
+                <div class="tier-price">
+                    <strong>€49</strong>
+                    <span class="tier-period">/ month</span>
+                </div>
+                <div class="tier-note">Billed monthly · Cancel anytime</div>
+                <ul>
+                    <li>Continuous Threat Exposure</li>
+                    <li>1 monitored target</li>
+                    <li>1 user</li>
+                    <li>Basic AI analysis</li>
+                    <li>HMAC-signed reports</li>
+                    <li class="disabled">Internal Threat Visibility</li>
+                    <li class="disabled">Multi-tenant view</li>
+                </ul>
+                <a href="contact.html" class="btn btn-outline">Start trial</a>
+            </div>
+
+            <!-- ─── TEAM (featured) ─── -->
+            <div class="tier featured">
+                <div class="tier-name" style="color: var(--accent);">TEAM</div>
+                <div class="tier-tagline">For SaaS startups, MSPs onboarding their first clients, and security teams of 2–10.</div>
+                <div class="tier-price">
+                    <strong>€199</strong>
+                    <span class="tier-period">/ month</span>
+                </div>
+                <div class="tier-note">Billed monthly · Cancel anytime</div>
+                <ul>
+                    <li>Continuous Threat Exposure</li>
+                    <li>Internal Threat Visibility</li>
+                    <li>Up to 10 monitored targets</li>
+                    <li>5 users</li>
+                    <li>Full AI Security Operations</li>
+                    <li>Signed evidence packs (SOC 2 / ISO 27001 templates)</li>
+                    <li>Discord + Slack notifications</li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary">Book a demo</a>
+            </div>
+
+            <!-- ─── COMPANY ─── -->
+            <div class="tier">
+                <div class="tier-name">COMPANY</div>
+                <div class="tier-tagline">For mid-market security teams, regulated SaaS, and MSPs running multi-tenant.</div>
+                <div class="tier-price">
+                    <strong>Custom</strong>
+                </div>
+                <div class="tier-note">Annual contract · Volume pricing</div>
+                <ul>
+                    <li>All three pillars</li>
+                    <li>Unlimited targets and users</li>
+                    <li>Custom AI prompts and report templates</li>
+                    <li>SSO + role-based access</li>
+                    <li>Multi-tenant view for MSPs</li>
+                    <li>Priority support + onboarding</li>
+                    <li>Custom integrations</li>
+                </ul>
+                <a href="contact.html" class="btn btn-outline">Contact sales</a>
+            </div>
+
+        </div>
+
+        <p style="text-align: center; margin-top: 48px; color: var(--text-dim); font-size: 13px;">
+            All tiers include unlimited scans, HMAC-signed reports, and zero data egress. Self-hosted available on Company.
+        </p>
+    </div>
+</section>
+
+<!-- ───────── COMPARISON ───────── -->
+<section>
+    <div class="container">
+        <div class="section-header">
+            <div class="section-eyebrow">Comparison</div>
+            <h2 class="section-title">Vs. traditional pentesting.</h2>
+            <p class="section-subtitle">Secumind isn't a replacement for an annual red team engagement — but it's what fills the eleven months in between.</p>
+        </div>
+        <div class="card" style="padding: 0; overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+                <thead>
+                    <tr style="background: rgba(0,0,0,0.25);">
+                        <th style="text-align: left; padding: 16px 20px; color: var(--text-muted); font-weight: 600; font-size: 12px; letter-spacing: 0.5px;">&nbsp;</th>
+                        <th style="text-align: left; padding: 16px 20px; color: var(--text); font-weight: 600;">Secumind</th>
+                        <th style="text-align: left; padding: 16px 20px; color: var(--text-muted); font-weight: 600;">Annual pentest</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td style="padding: 14px 20px; color: var(--text-muted); border-top: 1px solid var(--border-soft);">Cadence</td><td style="padding: 14px 20px; color: var(--text); border-top: 1px solid var(--border-soft);">Continuous</td><td style="padding: 14px 20px; color: var(--text-dim); border-top: 1px solid var(--border-soft);">Once a year</td></tr>
+                    <tr><td style="padding: 14px 20px; color: var(--text-muted); border-top: 1px solid var(--border-soft);">Cost</td><td style="padding: 14px 20px; color: var(--text); border-top: 1px solid var(--border-soft);">From €49/month</td><td style="padding: 14px 20px; color: var(--text-dim); border-top: 1px solid var(--border-soft);">€20–60k per engagement</td></tr>
+                    <tr><td style="padding: 14px 20px; color: var(--text-muted); border-top: 1px solid var(--border-soft);">Internal visibility</td><td style="padding: 14px 20px; color: var(--text); border-top: 1px solid var(--border-soft);">Yes — live auth + traffic</td><td style="padding: 14px 20px; color: var(--text-dim); border-top: 1px solid var(--border-soft);">External focus</td></tr>
+                    <tr><td style="padding: 14px 20px; color: var(--text-muted); border-top: 1px solid var(--border-soft);">Audit-ready reports</td><td style="padding: 14px 20px; color: var(--text); border-top: 1px solid var(--border-soft);">Signed, on schedule</td><td style="padding: 14px 20px; color: var(--text-dim); border-top: 1px solid var(--border-soft);">PDF, valid for one moment</td></tr>
+                    <tr><td style="padding: 14px 20px; color: var(--text-muted); border-top: 1px solid var(--border-soft);">Setup time</td><td style="padding: 14px 20px; color: var(--text); border-top: 1px solid var(--border-soft);">~20 minutes</td><td style="padding: 14px 20px; color: var(--text-dim); border-top: 1px solid var(--border-soft);">Weeks of scoping</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<section style="border-bottom: none;">
+    <div class="container">
+        <div class="cta-block">
+            <h2>Not sure which tier?</h2>
+            <p>Book a 15-minute walkthrough and we'll match the plan to your environment.</p>
+            <a href="contact.html" class="btn btn-primary btn-lg">Book a demo</a>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer class="footer">
+    <div class="footer-inner">
+        <div>
+            <div class="footer-brand">Secu<span>mind</span></div>
+            <p style="font-size: 13px; max-width: 320px;">Continuous AI-powered security operations for teams that need pentest evidence, internal threat visibility, and compliance-ready reports — without a SOC budget.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Product</h4>
+            <ul>
+                <li><a href="product.html">Three pillars</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Get started</h4>
+            <ul>
+                <li><a href="contact.html">Book a demo</a></li>
+                <li><a href="mailto:hello@secumind.example">hello@secumind.example</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        © <span id="footerYear"></span> Secumind. All rights reserved.
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

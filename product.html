@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Product — Secumind</title>
+    <meta name="description" content="The three pillars of Secumind: Continuous Threat Exposure, Internal Threat Visibility, and AI Security Operations.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+    <div class="nav-inner">
+        <a href="index.html" class="nav-brand">Secu<span>mind</span></a>
+        <button class="nav-toggle" onclick="toggleNav()" aria-label="Open menu">☰</button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="product.html" class="active">Product</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html" class="btn btn-primary">Book a demo</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+
+<section class="hero" style="padding-top: 80px; padding-bottom: 56px;">
+    <div class="hero-inner">
+        <span class="hero-eyebrow">Product</span>
+        <h1 class="hero-title">One platform.<br>Three outcomes.</h1>
+        <p class="hero-subtitle">
+            Every feature in Secumind serves one of three outcomes — Continuous Threat Exposure, Internal Threat Visibility, and AI Security Operations. No sprawl. No fragmented tools.
+        </p>
+    </div>
+</section>
+
+<!-- ───────── PILLAR 1 ───────── -->
+<section id="cte">
+    <div class="container">
+        <div class="grid-2" style="align-items: start; gap: 48px;">
+            <div>
+                <div class="section-eyebrow" style="margin-bottom: 16px;">Pillar 01 · Continuous Threat Exposure</div>
+                <h2 style="margin-bottom: 20px;">What an attacker would find — every day, not once a year.</h2>
+                <p style="font-size: 17px; line-height: 1.6; margin-bottom: 20px;">
+                    Secumind runs AI-driven attack simulations against your infrastructure, correlates every discovered service to live CVE intelligence, and tracks how your external attack surface changes between scans.
+                </p>
+                <p style="font-size: 15px;">
+                    A traditional pentest is a snapshot in time. Secumind reruns on a schedule — so the report you hand an auditor reflects last week, not last quarter.
+                </p>
+            </div>
+            <div class="card">
+                <h4 style="margin-bottom: 18px; color: var(--accent); font-size: 13px; text-transform: uppercase; letter-spacing: 1px;">Capabilities</h4>
+                <ul class="pillar-features">
+                    <li>AI-driven attack simulations mapped to MITRE ATT&amp;CK</li>
+                    <li>Continuous CVE correlation against the NVD</li>
+                    <li>External surface monitoring: SSL expiry, DNS changes, exposed ports, breach exposure</li>
+                    <li>Drift detection that flags new hosts, new services, and new vulnerabilities</li>
+                    <li>nmap-backed network reconnaissance</li>
+                    <li>Plugin-based attack chain extensions</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ───────── PILLAR 2 ───────── -->
+<section id="itv">
+    <div class="container">
+        <div class="grid-2" style="align-items: start; gap: 48px;">
+            <div class="card">
+                <h4 style="margin-bottom: 18px; color: var(--accent); font-size: 13px; text-transform: uppercase; letter-spacing: 1px;">Capabilities</h4>
+                <ul class="pillar-features">
+                    <li>Live nginx + SSH event ingestion</li>
+                    <li>Automatic brute-force and credential-stuffing detection</li>
+                    <li>Failed-then-successful login alerting</li>
+                    <li>Lateral movement and privilege escalation signals</li>
+                    <li>Dark web credential exposure monitoring</li>
+                    <li>Active TCP connection visibility</li>
+                </ul>
+            </div>
+            <div>
+                <div class="section-eyebrow" style="margin-bottom: 16px;">Pillar 02 · Internal Threat Visibility</div>
+                <h2 style="margin-bottom: 20px;">What's already moving inside — before someone notices on the news.</h2>
+                <p style="font-size: 17px; line-height: 1.6; margin-bottom: 20px;">
+                    Most breaches go undetected for weeks because no one's watching the auth logs, the web logs, or the dark web. Secumind watches all three, continuously, and surfaces the patterns that matter.
+                </p>
+                <p style="font-size: 15px;">
+                    Catches account-takeover attempts in progress, not after the customer email goes out.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ───────── PILLAR 3 ───────── -->
+<section id="aio">
+    <div class="container">
+        <div class="grid-2" style="align-items: start; gap: 48px;">
+            <div>
+                <div class="section-eyebrow" style="margin-bottom: 16px;">Pillar 03 · AI Security Operations</div>
+                <h2 style="margin-bottom: 20px;">A senior analyst's report, generated on a schedule.</h2>
+                <p style="font-size: 17px; line-height: 1.6; margin-bottom: 20px;">
+                    Every finding from every pillar feeds a single AI-driven workflow that ranks risk, drafts remediations, and produces signed, tamper-proof audit reports ready for SOC&nbsp;2, ISO&nbsp;27001, and cyber-insurance evidence packs.
+                </p>
+                <p style="font-size: 15px;">
+                    Built on top of Anthropic Claude. Outputs are signed with HMAC-SHA256, so auditors can verify nothing was changed after generation.
+                </p>
+            </div>
+            <div class="card">
+                <h4 style="margin-bottom: 18px; color: var(--accent); font-size: 13px; text-transform: uppercase; letter-spacing: 1px;">Capabilities</h4>
+                <ul class="pillar-features">
+                    <li>AI-driven risk assessment and attack narrative</li>
+                    <li>HMAC-SHA256 signed, verifiable reports</li>
+                    <li>Scheduled scans with Discord, Slack, webhook alerts</li>
+                    <li>Plain-English security awareness briefings</li>
+                    <li>Audit evidence packs (SOC 2, ISO 27001)</li>
+                    <li>Weekly AI executive summary (roadmap)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ───────── ROADMAP ───────── -->
+<section>
+    <div class="container">
+        <div class="section-header">
+            <div class="section-eyebrow">Roadmap</div>
+            <h2 class="section-title">What's shipping next.</h2>
+            <p class="section-subtitle">Public roadmap. No dark launches.</p>
+        </div>
+        <div class="grid-3">
+            <div class="card">
+                <h4 style="color: var(--accent); margin-bottom: 14px; font-size: 13px; text-transform: uppercase; letter-spacing: 1px;">Now</h4>
+                <ul class="pillar-features">
+                    <li>Unified Findings inbox</li>
+                    <li>AI Operations pillar</li>
+                    <li>Discord + Slack notifications</li>
+                    <li>Signed evidence reports</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h4 style="color: var(--accent); margin-bottom: 14px; font-size: 13px; text-transform: uppercase; letter-spacing: 1px;">Next</h4>
+                <ul class="pillar-features">
+                    <li>Linear / Jira / GitHub Issues auto-create</li>
+                    <li>SSO via Google + Microsoft</li>
+                    <li>Weekly AI executive summary email</li>
+                    <li>Multi-tenant view for MSPs</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h4 style="color: var(--accent); margin-bottom: 14px; font-size: 13px; text-transform: uppercase; letter-spacing: 1px;">Later</h4>
+                <ul class="pillar-features">
+                    <li>PDF export with custom branding</li>
+                    <li>SAML SSO</li>
+                    <li>ATT&amp;CK navigator overlay</li>
+                    <li>SOC 2 / ISO 27001 templates</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section style="border-bottom: none;">
+    <div class="container">
+        <div class="cta-block">
+            <h2>See the platform.</h2>
+            <p>Fifteen minutes, on your infrastructure.</p>
+            <a href="contact.html" class="btn btn-primary btn-lg">Book a demo</a>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer class="footer">
+    <div class="footer-inner">
+        <div>
+            <div class="footer-brand">Secu<span>mind</span></div>
+            <p style="font-size: 13px; max-width: 320px;">Continuous AI-powered security operations for teams that need pentest evidence, internal threat visibility, and compliance-ready reports — without a SOC budget.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Product</h4>
+            <ul>
+                <li><a href="product.html">Three pillars</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Get started</h4>
+            <ul>
+                <li><a href="contact.html">Book a demo</a></li>
+                <li><a href="mailto:hello@secumind.example">hello@secumind.example</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        © <span id="footerYear"></span> Secumind. All rights reserved.
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

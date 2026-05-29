@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FAQ — Secumind</title>
+    <meta name="description" content="Answers to the questions teams ask before a demo.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+    <div class="nav-inner">
+        <a href="index.html" class="nav-brand">Secu<span>mind</span></a>
+        <button class="nav-toggle" onclick="toggleNav()" aria-label="Open menu">☰</button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="product.html">Product</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="faq.html" class="active">FAQ</a></li>
+            <li><a href="contact.html" class="btn btn-primary">Book a demo</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+
+<section class="hero" style="padding-top: 80px; padding-bottom: 48px;">
+    <div class="hero-inner">
+        <span class="hero-eyebrow">FAQ</span>
+        <h1 class="hero-title">Questions, answered.</h1>
+        <p class="hero-subtitle">
+            If yours isn't here, hit <a href="contact.html">contact</a> and you'll get a direct reply.
+        </p>
+    </div>
+</section>
+
+<section>
+    <div class="container" style="max-width: 820px;">
+
+        <div class="faq-item">
+            <h3>Is this a replacement for a traditional pentest?</h3>
+            <p>No — and we don't pretend it is. Secumind sits between your annual pentests, so the gap between formal engagements stops being a blind spot. Many of our customers run both.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Where does my data go?</h3>
+            <p>Detection logic runs entirely on your infrastructure. The only outbound call is the optional AI analysis (to Anthropic Claude). That call is configurable and can be disabled for fully air-gapped deployments.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What about false positives?</h3>
+            <p>Every finding has an "accepted risk" status you can apply with a note. Once marked, the same fingerprint won't surface as new on subsequent scans.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Do you integrate with my existing tools?</h3>
+            <p>Discord and Slack webhooks ship today. Ticket-create webhooks for Linear / Jira / GitHub Issues are configurable. SSO (Google, Microsoft) on the Company tier.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How long does setup take?</h3>
+            <p>About twenty minutes for the first target. Most teams have their first round of findings within an hour.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Is the audit report really auditor-grade?</h3>
+            <p>Reports are HMAC-SHA256 signed, with verifiable integrity — auditors can confirm nothing was edited after generation. Findings map to MITRE ATT&amp;CK and CVE identifiers, which is the language SOC&nbsp;2 and ISO&nbsp;27001 reviewers already use.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Can I self-host?</h3>
+            <p>Yes, on the Company tier. Self-hosted deployments are fully air-gapped if AI analysis is disabled, and you can wire the dashboard to your own SSO and Postgres instance.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Do you offer a free trial?</h3>
+            <p>Yes — the Solo tier comes with a 14-day trial. The Team and Company tiers start with a guided walkthrough so we can match the configuration to your environment.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What stack does Secumind run on?</h3>
+            <p>Python + Flask backend with Postgres for auth and SQLite for the findings inbox. Anthropic Claude for AI analysis. Runs on any Linux server, or as a Docker container.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How do I get my findings out of Secumind?</h3>
+            <p>Every finding is exportable as signed JSON. Reports come as JSON, HTML, and (soon) PDF. The data is yours — no vendor lock-in.</p>
+        </div>
+
+    </div>
+</section>
+
+<section style="border-bottom: none;">
+    <div class="container">
+        <div class="cta-block">
+            <h2>Still have questions?</h2>
+            <p>Book a 15-minute walkthrough and ask anything live.</p>
+            <a href="contact.html" class="btn btn-primary btn-lg">Book a demo</a>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer class="footer">
+    <div class="footer-inner">
+        <div>
+            <div class="footer-brand">Secu<span>mind</span></div>
+            <p style="font-size: 13px; max-width: 320px;">Continuous AI-powered security operations for teams that need pentest evidence, internal threat visibility, and compliance-ready reports — without a SOC budget.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Product</h4>
+            <ul>
+                <li><a href="product.html">Three pillars</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Get started</h4>
+            <ul>
+                <li><a href="contact.html">Book a demo</a></li>
+                <li><a href="mailto:hello@secumind.example">hello@secumind.example</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        © <span id="footerYear"></span> Secumind. All rights reserved.
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

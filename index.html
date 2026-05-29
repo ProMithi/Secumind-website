@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Secumind — Continuous AI-powered security operations</title>
+    <meta name="description" content="Continuous attack simulations, internal threat visibility, and signed audit evidence — in one platform, without a red team budget.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ───────── NAV ───────── -->
+<nav class="nav">
+    <div class="nav-inner">
+        <a href="index.html" class="nav-brand">Secu<span>mind</span></a>
+        <button class="nav-toggle" onclick="toggleNav()" aria-label="Open menu">☰</button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="product.html">Product</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html" class="btn btn-primary">Book a demo</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+
+<!-- ───────── HERO ───────── -->
+<section class="hero">
+    <div class="hero-inner">
+        <span class="hero-eyebrow">Continuous security operations · Built for teams without a SOC</span>
+        <h1 class="hero-title">Continuous AI-powered security operations.<br>One platform.</h1>
+        <p class="hero-subtitle">
+            Secumind runs continuous attack simulations, watches what's already moving inside your network, and produces signed audit evidence your auditors and insurers accept — without standing up a SOC or paying for a red team engagement.
+        </p>
+        <div class="hero-cta">
+            <a href="contact.html" class="btn btn-primary btn-lg">Book a demo</a>
+            <a href="product.html" class="btn btn-outline btn-lg">See how it works</a>
+        </div>
+    </div>
+</section>
+
+<!-- ───────── PILLARS ───────── -->
+<section>
+    <div class="container">
+        <div class="section-header">
+            <div class="section-eyebrow">Three pillars · One platform</div>
+            <h2 class="section-title">Built around three outcomes, not nine tools.</h2>
+            <p class="section-subtitle">Every feature in Secumind serves one of three outcomes. Memorable, parallel, easy to operate.</p>
+        </div>
+        <div class="pillars">
+            <div class="pillar">
+                <div class="pillar-num">01</div>
+                <h3 class="pillar-title">Continuous Threat Exposure</h3>
+                <p class="pillar-lede">What an attacker would find — every day, not once a year.</p>
+                <p>AI-driven attack simulations against your infrastructure, with every discovered service correlated to live CVE intelligence.</p>
+                <ul class="pillar-features">
+                    <li>MITRE ATT&amp;CK-mapped attack simulations</li>
+                    <li>Continuous CVE correlation from the NVD</li>
+                    <li>SSL, DNS, exposed port monitoring</li>
+                    <li>Drift detection on every scan</li>
+                </ul>
+            </div>
+            <div class="pillar">
+                <div class="pillar-num">02</div>
+                <h3 class="pillar-title">Internal Threat Visibility</h3>
+                <p class="pillar-lede">What's already moving inside — before someone notices on the news.</p>
+                <p>Live monitoring of auth events, web traffic, and dark web exposure — surfacing the patterns that signal compromise in progress.</p>
+                <ul class="pillar-features">
+                    <li>Live nginx + SSH event ingestion</li>
+                    <li>Automatic brute-force and credential-stuffing detection</li>
+                    <li>Lateral movement and privilege escalation signals</li>
+                    <li>Dark web credential exposure monitoring</li>
+                </ul>
+            </div>
+            <div class="pillar">
+                <div class="pillar-num">03</div>
+                <h3 class="pillar-title">AI Security Operations</h3>
+                <p class="pillar-lede">A senior analyst's report, generated on a schedule.</p>
+                <p>Every finding from every pillar feeds a single AI workflow — ranking risk, drafting remediations, and producing audit-grade evidence.</p>
+                <ul class="pillar-features">
+                    <li>AI-driven risk assessment and attack narrative</li>
+                    <li>HMAC-SHA256 signed, tamper-proof reports</li>
+                    <li>Scheduled scans with Discord, Slack, webhook alerts</li>
+                    <li>Plain-English briefings for stakeholders</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ───────── FINDINGS INBOX ───────── -->
+<section>
+    <div class="container">
+        <div class="section-header">
+            <div class="section-eyebrow">Unified Findings inbox</div>
+            <h2 class="section-title">Every signal, one inbox.</h2>
+            <p class="section-subtitle">Stop juggling pentest PDFs, monitoring dashboards, and Slack alerts. Triage, assign, and close every finding from a single queue with full audit history.</p>
+        </div>
+        <div class="card" style="padding: 0; overflow: hidden;">
+            <div style="background: rgba(0,0,0,0.25); padding: 14px 24px; border-bottom: 1px solid var(--border); display: flex; gap: 16px; align-items: center; font-size: 12px;">
+                <strong style="color: var(--text);">Findings inbox</strong>
+                <span style="color: var(--text-muted);">Filter:</span>
+                <span style="background: rgba(220,38,38,0.15); color: #fca5a5; padding: 2px 8px; border-radius: 4px; font-weight: 600; letter-spacing: 0.5px;">3 CRITICAL</span>
+                <span style="background: rgba(234,88,12,0.15); color: #fdba74; padding: 2px 8px; border-radius: 4px; font-weight: 600; letter-spacing: 0.5px;">8 HIGH</span>
+                <span style="background: rgba(245,158,11,0.15); color: #fcd34d; padding: 2px 8px; border-radius: 4px; font-weight: 600; letter-spacing: 0.5px;">14 MEDIUM</span>
+            </div>
+            <div style="padding: 4px 0;">
+                <div style="display: flex; gap: 12px; padding: 14px 24px; border-bottom: 1px solid var(--border-soft); align-items: center;">
+                    <span style="background: rgba(220,38,38,0.15); color: #fca5a5; padding: 3px 8px; border-radius: 4px; font-size: 10px; font-weight: 700; letter-spacing: 0.5px;">CRITICAL</span>
+                    <div style="flex: 1;">
+                        <div style="color: var(--text); font-weight: 600; font-size: 14px;">CVE-2021-44228 on db-eu-2:5432 (PostgreSQL 13.2)</div>
+                        <div style="color: var(--text-dim); font-size: 12px; margin-top: 2px;">Threat Exposure · scan · first seen 2h ago</div>
+                    </div>
+                    <span style="color: var(--text-muted); font-size: 12px; border: 1px solid var(--border); padding: 4px 10px; border-radius: 5px;">Open</span>
+                </div>
+                <div style="display: flex; gap: 12px; padding: 14px 24px; border-bottom: 1px solid var(--border-soft); align-items: center;">
+                    <span style="background: rgba(234,88,12,0.15); color: #fdba74; padding: 3px 8px; border-radius: 4px; font-size: 10px; font-weight: 700; letter-spacing: 0.5px;">HIGH</span>
+                    <div style="flex: 1;">
+                        <div style="color: var(--text); font-weight: 600; font-size: 14px;">47 failed SSH logins from 185.220.101.42</div>
+                        <div style="color: var(--text-dim); font-size: 12px; margin-top: 2px;">Internal Visibility · live_traffic · first seen 18m ago</div>
+                    </div>
+                    <span style="color: var(--text-muted); font-size: 12px; border: 1px solid var(--border); padding: 4px 10px; border-radius: 5px;">In progress</span>
+                </div>
+                <div style="display: flex; gap: 12px; padding: 14px 24px; align-items: center;">
+                    <span style="background: rgba(245,158,11,0.15); color: #fcd34d; padding: 3px 8px; border-radius: 4px; font-size: 10px; font-weight: 700; letter-spacing: 0.5px;">MEDIUM</span>
+                    <div style="flex: 1;">
+                        <div style="color: var(--text); font-weight: 600; font-size: 14px;">SSL cert for api.example.com expires in 18 days</div>
+                        <div style="color: var(--text-dim); font-size: 12px; margin-top: 2px;">Threat Exposure · digital_bodyguard · first seen 1d ago</div>
+                    </div>
+                    <span style="color: var(--text-muted); font-size: 12px; border: 1px solid var(--border); padding: 4px 10px; border-radius: 5px;">Acknowledged</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ───────── STATS ───────── -->
+<section>
+    <div class="container">
+        <div class="stats">
+            <div>
+                <div class="stat-value">250k+</div>
+                <div class="stat-label">CVEs correlated from the NVD</div>
+            </div>
+            <div>
+                <div class="stat-value">4</div>
+                <div class="stat-label">Attack chain categories simulated end-to-end</div>
+            </div>
+            <div>
+                <div class="stat-value">~20m</div>
+                <div class="stat-label">Average setup time</div>
+            </div>
+            <div>
+                <div class="stat-value">0</div>
+                <div class="stat-label">Data leaves your infrastructure</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ───────── HOW IT WORKS ───────── -->
+<section>
+    <div class="container">
+        <div class="section-header">
+            <div class="section-eyebrow">How it works</div>
+            <h2 class="section-title">Three steps. No agents. No SOC.</h2>
+        </div>
+        <div class="steps">
+            <div class="step">
+                <div class="step-title">Connect</div>
+                <h3>Point Secumind at your stack.</h3>
+                <p>Hosted or self-hosted. No agent required. Connect domains, infrastructure, and log sources in minutes.</p>
+            </div>
+            <div class="step">
+                <div class="step-title">Schedule</div>
+                <h3>Pick a cadence.</h3>
+                <p>Daily, weekly, or monthly. Scans, simulations, and surface checks run on your schedule — without intervention.</p>
+            </div>
+            <div class="step">
+                <div class="step-title">Triage</div>
+                <h3>Work the inbox.</h3>
+                <p>Every finding from every pillar lands in one queue with status tracking and an audit trail.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ───────── FINAL CTA ───────── -->
+<section style="border-bottom: none;">
+    <div class="container">
+        <div class="cta-block">
+            <h2>See it in your environment.</h2>
+            <p>A 15-minute walkthrough on your infrastructure — no slides, no sales pitch.</p>
+            <a href="contact.html" class="btn btn-primary btn-lg">Book a demo</a>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- ───────── FOOTER ───────── -->
+<footer class="footer">
+    <div class="footer-inner">
+        <div>
+            <div class="footer-brand">Secu<span>mind</span></div>
+            <p style="font-size: 13px; max-width: 320px;">Continuous AI-powered security operations for teams that need pentest evidence, internal threat visibility, and compliance-ready reports — without a SOC budget.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Product</h4>
+            <ul>
+                <li><a href="product.html">Three pillars</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Get started</h4>
+            <ul>
+                <li><a href="contact.html">Book a demo</a></li>
+                <li><a href="mailto:hello@secumind.example">hello@secumind.example</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        © <span id="footerYear"></span> Secumind. All rights reserved.
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
