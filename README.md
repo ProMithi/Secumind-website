@@ -68,7 +68,7 @@ To use `secumind.com` (or any domain you own):
 | File | Placeholder | Replace with |
 |---|---|---|
 | `contact.html` | `https://formspree.io/f/YOUR_FORM_ID` | Real Formspree (or Netlify Forms / Getform) endpoint |
-| `*.html` | `hello@secumind.example` | Real contact email |
+| `*.html` | `mikklar@proton.me` | Real contact email |
 | `pricing.html` | `€49`, `€199` | Final pricing |
 | `index.html` (stats) | `250k+`, `4`, `~20m`, `0` | Numbers you can defend |
 | `about.html` | Founder bio | Final wording |
@@ -80,7 +80,7 @@ All styles live in [`css/style.css`](css/style.css). Brand colors are CSS variab
 ```css
 --bg:          #07101e;   /* page background */
 --bg-elev:     #0c1728;   /* cards */
---accent:      #6ee7b7;   /* mint — primary brand color */
+--accent:      #1fcf56;   /* mint — primary brand color */
 --text:        #e2e8f0;
 --text-muted:  #94a3b8;
 ```
