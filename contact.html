@@ -6,6 +6,7 @@
     <title>Book a demo — Secumind</title>
     <meta name="description" content="Book a 15-minute walkthrough on your infrastructure. No slides, no sales pitch.">
     <link rel="stylesheet" href="css/style.css">
+    <script>try{if(localStorage.getItem('theme')==='light'){document.documentElement.setAttribute('data-theme','light');}}catch(e){}</script>
 </head>
 <body>
 
@@ -27,6 +28,7 @@
 <main>
 
 <section class="hero" style="padding-top: 80px; padding-bottom: 48px;">
+    <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
     <div class="hero-inner">
         <span class="hero-eyebrow">Book a demo</span>
         <h1 class="hero-title">Fifteen minutes.<br>On your infrastructure.</h1>
@@ -138,5 +140,6 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script src="js/hero-interactive.js"></script>
 </body>
 </html>

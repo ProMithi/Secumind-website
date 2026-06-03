@@ -6,6 +6,7 @@
     <title>Product — Secumind</title>
     <meta name="description" content="The three pillars of Secumind: Continuous Threat Exposure, Internal Threat Visibility, and AI Security Operations.">
     <link rel="stylesheet" href="css/style.css">
+    <script>try{if(localStorage.getItem('theme')==='light'){document.documentElement.setAttribute('data-theme','light');}}catch(e){}</script>
 </head>
 <body>
 
@@ -27,6 +28,7 @@
 <main>
 
 <section class="hero" style="padding-top: 80px; padding-bottom: 56px;">
+    <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
     <div class="hero-inner">
         <span class="hero-eyebrow">Product</span>
         <h1 class="hero-title">One platform.<br>Three outcomes.</h1>
@@ -210,5 +212,6 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script src="js/hero-interactive.js"></script>
 </body>
 </html>

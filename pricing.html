@@ -6,6 +6,7 @@
     <title>Pricing — Secumind</title>
     <meta name="description" content="Three tiers, bundled by pillar. No per-feature SKUs.">
     <link rel="stylesheet" href="css/style.css">
+    <script>try{if(localStorage.getItem('theme')==='light'){document.documentElement.setAttribute('data-theme','light');}}catch(e){}</script>
 </head>
 <body>
 
@@ -27,6 +28,7 @@
 <main>
 
 <section class="hero" style="padding-top: 80px; padding-bottom: 56px;">
+    <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
     <div class="hero-inner">
         <span class="hero-eyebrow">Pricing</span>
         <h1 class="hero-title">Three tiers.<br>No per-feature SKUs.</h1>
@@ -186,5 +188,6 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script src="js/hero-interactive.js"></script>
 </body>
 </html>

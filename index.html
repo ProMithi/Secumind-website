@@ -6,6 +6,7 @@
     <title>Secumind — Continuous AI-powered security operations</title>
     <meta name="description" content="Continuous attack simulations, internal threat visibility, and signed audit evidence — in one platform, without a red team budget.">
     <link rel="stylesheet" href="css/style.css">
+    <script>try{if(localStorage.getItem('theme')==='light'){document.documentElement.setAttribute('data-theme','light');}}catch(e){}</script>
 </head>
 <body>
 
@@ -29,6 +30,7 @@
 
 <!-- ───────── HERO ───────── -->
 <section class="hero">
+    <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
     <div class="hero-inner">
         <!-- <span class="hero-eyebrow">Continuous security operations · Built for teams without a SOC</span> -->
         <h1 class="hero-title">Continuous AI-powered security operations.<br>One platform.</h1>
@@ -237,5 +239,6 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script src="js/hero-interactive.js"></script>
 </body>
 </html>

@@ -28,6 +28,46 @@
     --font-mono:    'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
+/* ── Light theme ───────────────────────────────────────────────────
+   Activated by data-theme="light" on <html> (set via the nav toggle
+   and an inline bootstrap in each page's <head>). */
+html[data-theme="light"] {
+    --bg:           #eef1f7;
+    --bg-elev:      #ffffff;
+    --bg-soft:      rgba(17, 19, 30, 0.035);
+    --border:       rgba(17, 19, 30, 0.12);
+    --border-soft:  rgba(17, 19, 30, 0.07);
+    --text:         #15171f;
+    --text-muted:   #454a5e;
+    --text-dim:     #6a6f82;
+    --accent:       #5566e0;
+    --accent-soft:  rgba(85, 102, 224, 0.12);
+}
+
+/* Smooth the swap between themes. */
+body, .nav, .card, .footer, .theme-toggle {
+    transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease;
+}
+
+html[data-theme="light"] .nav {
+    background: rgba(255, 255, 255, 0.82);
+}
+html[data-theme="light"] .hero::after {
+    background: radial-gradient(ellipse at 50% 38%, transparent 35%, rgba(238, 241, 247, 0.6) 82%);
+}
+html[data-theme="light"] .hero-title {
+    background: linear-gradient(180deg, #15171f 0%, #5566e0 135%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/* The smoke glows additively on dark; on a light page render it as a
+   soft darkening haze instead so it still reads as smoke. */
+html[data-theme="light"] .hero-canvas {
+    opacity: 0.8;
+    mix-blend-mode: multiply;
+}
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 html { scroll-behavior: smooth; }
@@ -126,6 +166,14 @@ p { color: var(--text-muted); }
     opacity: 1;
 }
 
+/* Keep the "Book a demo" button text white in both themes — the
+   generic .nav-links a rule would otherwise win on specificity and
+   darken it in light mode. */
+.nav-links a.btn-primary,
+.nav-links a.btn-primary:hover {
+    color: #f9fafb;
+}
+
 .nav-toggle {
     display: none;
     background: none;
@@ -133,6 +181,31 @@ p { color: var(--text-muted); }
     color: var(--text);
     font-size: 22px;
     cursor: pointer;
+}
+
+/* ── Theme toggle (light / dark) ───────────────────────────────── */
+.theme-toggle {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-muted);
+    cursor: pointer;
+}
+.theme-toggle:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+.theme-toggle:active { transform: scale(0.94); }
+.theme-toggle svg {
+    width: 20px;
+    height: 20px;
+    display: block;
 }
 
 /* ── Buttons ───────────────────────────────────────────────────── */
@@ -210,6 +283,8 @@ section {
 
 /* ── Hero ──────────────────────────────────────────────────────── */
 .hero {
+    position: relative;
+    overflow: hidden;
     padding: 96px 0 80px;
     border-bottom: 1px solid var(--border-soft);
     background:
@@ -217,11 +292,46 @@ section {
         radial-gradient(ellipse at bottom right, rgba(180, 237, 210, 0.06), transparent 60%);
 }
 
+/* Interactive gradient canvas — sits behind the hero text and
+   reacts to the cursor (see js/hero-interactive.js). */
+.hero-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    /* Extra blur keeps the gradient blobs buttery-soft and avoids
+       any banding from the radial fills. */
+    filter: blur(12px);
+    opacity: 0;
+    transition: opacity 1.2s ease;
+}
+
+.hero-canvas.is-ready { opacity: 1; }
+
+/* A faint dark veil + grain keeps the headline legible on top of
+   the brightest part of the gradient. */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: radial-gradient(ellipse at 50% 38%, transparent 30%, rgba(19, 17, 18, 0.55) 80%);
+}
+
 .hero-inner {
+    position: relative;
+    z-index: 2;
     max-width: 880px;
     margin: 0 auto;
     text-align: center;
     padding: 0 24px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-canvas { filter: blur(28px); }
 }
 
 .hero-eyebrow {
