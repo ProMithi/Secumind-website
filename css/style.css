@@ -482,6 +482,74 @@ section {
     font-size: 13px;
 }
 
+/* ── Metrics table (e.g. "Secumind in Action") ─────────────────── */
+.metrics-table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--bg-soft);
+}
+
+.metrics-table {
+    width: 100%;
+    min-width: 560px;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.metrics-table th,
+.metrics-table td {
+    padding: 12px 18px;
+    text-align: right;
+    white-space: nowrap;
+    border-bottom: 1px solid var(--border-soft);
+}
+
+.metrics-table thead th {
+    color: var(--text);
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    background: var(--accent-soft);
+}
+
+.metrics-table th:first-child,
+.metrics-table td:first-child {
+    text-align: left;
+    color: var(--text);
+    font-weight: 500;
+}
+
+.metrics-table tbody td {
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+}
+
+.metrics-table tbody tr:hover { background: var(--bg-soft); }
+
+.metrics-table .col-total { color: var(--accent); font-weight: 600; }
+
+.metrics-table tfoot td {
+    border-top: 1px solid var(--border);
+    border-bottom: none;
+    font-weight: 700;
+    color: var(--text);
+    background: var(--accent-soft);
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+}
+
+.metrics-table tfoot td:first-child { font-family: var(--font-display); }
+
+.metrics-caption {
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-top: 16px;
+}
+
 /* ── How it works ──────────────────────────────────────────────── */
 .steps {
     display: grid;
@@ -653,6 +721,31 @@ section {
 }
 
 .form-help { font-size: 12px; color: var(--text-dim); margin-top: 6px; }
+
+.form-error {
+    color: #fca5a5;
+    background: rgba(220, 38, 38, 0.12);
+    border: 1px solid rgba(220, 38, 38, 0.3);
+    border-radius: var(--radius-sm);
+    padding: 10px 14px;
+    font-size: 13px;
+    margin-bottom: 16px;
+}
+
+.form-success {
+    text-align: center;
+    padding: 24px 8px;
+}
+
+.form-success h3 {
+    color: var(--success);
+    margin-bottom: 8px;
+}
+
+.form-success p {
+    color: var(--text-muted);
+    font-size: 14px;
+}
 
 /* ── Footer ────────────────────────────────────────────────────── */
 .footer {
