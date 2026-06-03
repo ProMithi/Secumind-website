@@ -1,3 +1,27 @@
+// Scroll-triggered counter animation for proof metric values
+(function () {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting || entry.target.dataset.counted) return;
+            entry.target.dataset.counted = '1';
+            const target = parseInt(entry.target.dataset.target, 10);
+            if (isNaN(target) || target === 0) return;
+            const duration = 1200;
+            const start = performance.now();
+            (function tick(now) {
+                const t = Math.min((now - start) / duration, 1);
+                const ease = 1 - Math.pow(1 - t, 3);
+                entry.target.textContent = Math.round(ease * target);
+                if (t < 1) requestAnimationFrame(tick);
+            })(performance.now());
+        });
+    }, { threshold: 0.6 });
+
+    document.querySelectorAll('.proof-value[data-target]').forEach(el => {
+        observer.observe(el);
+    });
+})();
+
 // Mobile nav toggle
 function toggleNav() {
     const links = document.getElementById('navLinks');

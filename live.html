@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Live Threat Coverage — Secumind</title>
+    <meta name="description" content="Real-time global threat intelligence. Live malware URLs, APT campaigns, and active threat indicators sourced from URLhaus and AlienVault OTX.">
+    <link rel="stylesheet" href="css/style.css">
+    <script>try{if(localStorage.getItem('theme')==='light'){document.documentElement.setAttribute('data-theme','light');}}catch(e){}</script>
+</head>
+<body>
+
+<nav class="nav">
+    <div class="nav-inner">
+        <a href="index.html" class="nav-brand">Secu<span>mind</span></a>
+        <button class="nav-toggle" onclick="toggleNav()" aria-label="Open menu">☰</button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="product.html">Product</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="live.html" class="active nav-live"><span class="nav-live-dot"></span>Live</a></li>
+            <li><a href="contact.html" class="btn btn-primary">Book a demo</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+
+<!-- ───────── HERO ───────── -->
+<section class="hero" style="padding-top: 64px; padding-bottom: 52px;">
+    <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
+    <div class="hero-inner">
+        <div class="live-eyebrow">
+            <span class="ticker-dot"></span>
+            <span>LIVE COVERAGE</span>
+        </div>
+        <h1 class="hero-title">Global Threat Intelligence</h1>
+        <p class="hero-subtitle">
+            Real-time feed of active malware infrastructure and threat campaigns —
+            sourced from the global security community and updated continuously.
+        </p>
+        <div class="live-stats-bar">
+            <div class="live-stat">
+                <div class="live-stat-value" id="totalCount">—</div>
+                <div class="live-stat-label">events loaded</div>
+            </div>
+            <div class="live-stat-div"></div>
+            <div class="live-stat">
+                <div class="live-stat-value">2</div>
+                <div class="live-stat-label">intelligence sources</div>
+            </div>
+            <div class="live-stat-div"></div>
+            <div class="live-stat">
+                <div class="live-stat-value" id="lastUpdate">—</div>
+                <div class="live-stat-label">last updated</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ───────── CONTROLS ───────── -->
+<div class="live-controls-bar">
+    <div class="container">
+        <div class="live-controls-inner">
+            <div class="filter-pills" id="filterPills">
+                <button class="filter-pill active" data-filter="all">All events</button>
+                <button class="filter-pill" data-filter="malware">Malware URLs</button>
+                <button class="filter-pill" data-filter="apt">APT / Campaigns</button>
+                <button class="filter-pill" data-filter="critical">Critical</button>
+                <button class="filter-pill" data-filter="high">High</button>
+            </div>
+            <div class="live-refresh-badge">
+                <span class="refresh-dot"></span>
+                <span>Refreshes every 90s</span>
+            </div>
+        </div>
+        <div class="sev-breakdown" id="severityBreakdown"></div>
+    </div>
+</div>
+
+<!-- ───────── FEED ───────── -->
+<div class="live-feed-wrap">
+    <div class="container">
+        <div class="live-feed" id="liveFeed">
+            <div class="live-loading">
+                <div class="live-loading-dot"></div>
+                <span>Fetching live threat data…</span>
+            </div>
+        </div>
+        <p class="live-attribution">
+            Data sourced from <a href="https://urlhaus.abuse.ch" target="_blank" rel="noopener noreferrer">URLhaus</a> (abuse.ch) and
+            <a href="https://otx.alienvault.com" target="_blank" rel="noopener noreferrer">AlienVault OTX</a>.
+            Events shown are real threats reported by the global security community.
+            Secumind does not own or operate the listed infrastructure.
+        </p>
+    </div>
+</div>
+
+</main>
+
+<!-- ───────── FOOTER ───────── -->
+<footer class="footer">
+    <div class="footer-inner">
+        <div>
+            <div class="footer-brand">Secu<span>mind</span></div>
+            <p style="font-size: 13px; max-width: 320px;">Continuous AI-powered security operations for teams that need pentest evidence, internal threat visibility, and compliance-ready reports — without a SOC budget.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Product</h4>
+            <ul>
+                <li><a href="product.html">Three pillars</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Get started</h4>
+            <ul>
+                <li><a href="contact.html">Book a demo</a></li>
+                <li><a href="mailto:mikkar@proton.me">mikkar@proton.me</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        © <span id="footerYear"></span> Secumind. All rights reserved.
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/hero-interactive.js"></script>
+<script src="js/live-feed.js"></script>
+</body>
+</html>
