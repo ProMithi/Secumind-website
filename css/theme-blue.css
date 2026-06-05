@@ -1,0 +1,618 @@
+/* ─────────────────────────────────────────────────────────────────
+   Secumind · Cyber Intelligence theme
+   Loaded after style.css on every page. Overrides colour tokens,
+   adds glassy cards, dot-grid hero, cyan glow on numbers, and
+   corrects every hardcoded rgba(128,147,241,…) purple value.
+───────────────────────────────────────────────────────────────── */
+
+/* ── Token overrides ────────────────────────────────────────────── */
+:root {
+    --bg:           #070b11;
+    --bg-elev:      #0c1420;
+    --bg-soft:      rgba(34, 211, 238, 0.03);
+    --border:       rgba(34, 211, 238, 0.1);
+    --border-soft:  rgba(34, 211, 238, 0.05);
+    --text:         #f0f6fc;
+    --text-muted:   #8b9cad;
+    --text-dim:     #4a5a6a;
+    --accent:       #22d3ee;
+    --accent-dark:  #0891b2;
+    --accent-soft:  rgba(34, 211, 238, 0.08);
+    --mint:         #34d399;
+    --danger:       #f87171;
+    --warning:      #fbbf24;
+    --medium:       #fcd34d;
+    --success:      #34d399;
+    --radius:       8px;
+    --radius-sm:    6px;
+}
+
+/* ── Body ───────────────────────────────────────────────────────── */
+body { background: var(--bg); }
+
+/* ── Nav ────────────────────────────────────────────────────────── */
+.nav {
+    background: rgba(7, 11, 17, 0.88);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+.nav-brand span { color: var(--accent); }
+.nav-links a:hover, .nav-links a.active { color: var(--accent); opacity: 1; }
+.nav-live-dot { background: var(--danger); }
+
+/* ── Hero ───────────────────────────────────────────────────────── */
+/* Dot grid scoped to the hero only, layered with ambient glows */
+.hero {
+    background:
+        radial-gradient(rgba(34, 211, 238, 0.09) 1px, transparent 1px),
+        radial-gradient(ellipse 90% 60% at 50% -10%, rgba(34, 211, 238, 0.09), transparent),
+        radial-gradient(ellipse at bottom right, rgba(248, 113, 113, 0.05), transparent 55%);
+    background-size: 28px 28px, auto, auto;
+    border-bottom: 1px solid var(--border-soft);
+}
+
+.hero::after {
+    background: radial-gradient(ellipse at 50% 40%, transparent 30%, rgba(7, 11, 17, 0.7) 80%);
+}
+
+/* Title: white → cyan gradient (overrides hardcoded #8093f1) */
+.hero-title {
+    background: linear-gradient(165deg, #f0f6fc 20%, #22d3ee 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Hero eyebrow pill (product / pricing / about / faq / contact pages) */
+.hero-eyebrow {
+    background: var(--accent-soft);
+    border: 1px solid rgba(34, 211, 238, 0.25); /* overrides hardcoded purple border */
+    color: var(--accent);
+}
+
+/* Badge pills */
+.hero-badges span {
+    background: rgba(34, 211, 238, 0.06);
+    border-color: rgba(34, 211, 238, 0.18);
+    color: var(--accent);
+}
+
+/* ── Scan-status pill (index.html hero only) ────────────────────── */
+.hero-scan-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(34, 211, 238, 0.07);
+    border: 1px solid rgba(34, 211, 238, 0.2);
+    border-radius: 999px;
+    padding: 6px 16px 6px 10px;
+    font-size: 11px;
+    font-family: var(--font-mono);
+    color: var(--accent);
+    letter-spacing: 0.4px;
+    margin-bottom: 28px;
+}
+
+.hero-scan-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 6px var(--accent);
+    animation: pulse-glow 2s ease-in-out infinite;
+    flex-shrink: 0;
+}
+
+@keyframes pulse-glow {
+    0%, 100% { opacity: 1; box-shadow: 0 0 6px var(--accent); }
+    50%       { opacity: 0.5; box-shadow: 0 0 12px var(--accent); }
+}
+
+/* ── Section eyebrows ───────────────────────────────────────────── */
+.section-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: var(--accent);
+    font-size: 11px;
+    font-family: var(--font-mono);
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+}
+
+.section-eyebrow::before {
+    content: '◈';
+    font-size: 9px;
+    opacity: 0.7;
+}
+
+/* ── Pillar cards ───────────────────────────────────────────────── */
+.pillar {
+    background: rgba(12, 20, 32, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Top-edge gradient stripe */
+.pillar::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    opacity: 0.6;
+}
+
+/* Overrides hardcoded rgba(128,147,241,0.3) */
+.pillar:hover {
+    border-color: rgba(34, 211, 238, 0.25);
+    background: rgba(12, 20, 32, 0.9);
+    transform: translateY(-3px);
+}
+
+.pillar:hover::before { opacity: 1; }
+
+.pillar-num {
+    background: var(--accent-soft);
+    color: var(--accent);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-mono);
+    border: 1px solid rgba(34, 211, 238, 0.15);
+    box-shadow: 0 0 8px rgba(34, 211, 238, 0.1);
+}
+
+.pillar-lede { color: var(--accent); opacity: 0.85; }
+.pillar-features li::before { background: var(--accent); }
+
+/* ── Generic cards ──────────────────────────────────────────────── */
+.card {
+    background: rgba(12, 20, 32, 0.8);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+/* ── Proof metrics ──────────────────────────────────────────────── */
+.proof-metrics {
+    background: var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.proof-metric {
+    background: rgba(12, 20, 32, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    position: relative;
+}
+
+.proof-metric::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    opacity: 0.3;
+}
+
+.proof-value {
+    color: var(--accent);
+    font-family: var(--font-mono);
+    text-shadow: 0 0 24px rgba(34, 211, 238, 0.45);
+}
+
+.proof-zero {
+    color: var(--mint);
+    text-shadow: 0 0 24px rgba(52, 211, 153, 0.4);
+}
+
+/* ── Steps ──────────────────────────────────────────────────────── */
+.step {
+    background: rgba(12, 20, 32, 0.75);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    overflow: hidden;
+    position: relative;
+}
+
+/* Large faint watermark counter — overrides style.css step::before */
+.step::before {
+    content: counter(step, decimal-leading-zero);
+    position: absolute;
+    top: 14px; right: 20px;
+    font-family: var(--font-mono);
+    font-size: 28px;
+    font-weight: 800;
+    color: rgba(34, 211, 238, 0.06);
+    line-height: 1;
+}
+
+/* Bottom-edge gradient on hover */
+.step::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    opacity: 0;
+    transition: opacity 0.25s;
+}
+
+.step:hover::after { opacity: 0.4; }
+.step-title { color: var(--accent); font-family: var(--font-mono); font-size: 11px; letter-spacing: 1.2px; }
+.step h3 { color: var(--text); }
+
+/* ── Pricing tiers ──────────────────────────────────────────────── */
+/* Overrides hardcoded rgba(128,147,241,0.45) and rgba(128,147,241,0.06) */
+.tier.featured {
+    border-color: rgba(34, 211, 238, 0.45);
+    background: linear-gradient(180deg, rgba(34, 211, 238, 0.06), var(--bg-elev) 40%);
+}
+
+.tier li::before { color: var(--accent); }
+
+/* ── CTA block ──────────────────────────────────────────────────── */
+/* Overrides hardcoded rgba(128,147,241,0.12) */
+.cta-block {
+    background:
+        radial-gradient(ellipse 70% 60% at 50% 50%, rgba(34, 211, 238, 0.06), transparent),
+        rgba(12, 20, 32, 0.8);
+    border: 1px solid rgba(34, 211, 238, 0.14);
+    border-radius: var(--radius);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-block::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    opacity: 0.5;
+}
+
+/* ── Form focus ─────────────────────────────────────────────────── */
+/* Overrides hardcoded rgba(128,147,241,0.5) */
+.form-row input:focus,
+.form-row select:focus,
+.form-row textarea:focus {
+    border-color: rgba(34, 211, 238, 0.5);
+}
+
+/* ── Buttons ────────────────────────────────────────────────────── */
+.btn {
+    border-radius: var(--radius-sm);
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.2px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+    color: #070b11;
+    font-weight: 700;
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.2);
+}
+
+.btn-primary:hover {
+    box-shadow: 0 0 28px rgba(34, 211, 238, 0.35);
+    transform: translateY(-1px);
+    opacity: 1;
+}
+
+/* Keep "Book a demo" button text dark in both themes */
+.nav-links a.btn-primary,
+.nav-links a.btn-primary:hover { color: #070b11; }
+
+.btn-outline {
+    border-color: rgba(34, 211, 238, 0.25);
+    color: var(--accent);
+    background: rgba(34, 211, 238, 0.03);
+}
+
+.btn-outline:hover {
+    border-color: var(--accent);
+    background: rgba(34, 211, 238, 0.08);
+    color: var(--accent);
+    box-shadow: 0 0 16px rgba(34, 211, 238, 0.12);
+    opacity: 1;
+}
+
+/* ── Footer ─────────────────────────────────────────────────────── */
+.footer { background: rgba(4, 7, 11, 0.6); border-top: 1px solid var(--border); }
+.footer-brand span { color: var(--accent); }
+.footer-col a:hover { color: var(--accent); }
+
+/* ── Sections ───────────────────────────────────────────────────── */
+section { border-bottom-color: var(--border-soft); }
+
+/* ── Theme toggle ───────────────────────────────────────────────── */
+.theme-toggle { border-color: var(--border); }
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ── Findings inbox (homepage) ──────────────────────────────────── */
+.inbox-header {
+    background: rgba(4, 7, 11, 0.5);
+    padding: 12px 24px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    font-size: 12px;
+    font-family: var(--font-mono);
+}
+
+.inbox-row {
+    display: flex;
+    gap: 12px;
+    padding: 14px 24px;
+    border-bottom: 1px solid var(--border-soft);
+    align-items: center;
+    transition: background 0.15s;
+}
+
+.inbox-row:last-child { border-bottom: none; }
+.inbox-row:hover { background: rgba(34, 211, 238, 0.025); }
+
+.inbox-row--critical { border-left: 2px solid var(--danger); }
+.inbox-row--high     { border-left: 2px solid var(--warning); }
+.inbox-row--medium   { border-left: 2px solid rgba(34, 211, 238, 0.4); }
+
+/* ── Live page overrides ────────────────────────────────────────── */
+/* Overrides hardcoded rgba(128,147,241,…) values on live.html */
+
+.filter-pill.active {
+    background: var(--accent-soft);
+    border-color: rgba(34, 211, 238, 0.4);
+    color: var(--accent);
+}
+
+.filter-pill:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* Overrides hardcoded rgba(128,147,241,0.3) */
+.feed-item:hover {
+    border-color: rgba(34, 211, 238, 0.3);
+    border-left-color: var(--accent);
+}
+
+.feed-item--critical { border-left-color: var(--danger); }
+.feed-item--high     { border-left-color: var(--warning); }
+.feed-item--medium   { border-left-color: var(--medium); }
+
+/* Redefines feed-flash keyframe with cyan instead of purple */
+@keyframes feed-flash {
+    0%   { background: rgba(34, 211, 238, 0.1); }
+    100% { background: var(--bg-elev); }
+}
+
+/* Overrides hardcoded rgba(128,147,241,…) in source-badge--otx */
+.source-badge--otx {
+    background: var(--accent-soft);
+    color: var(--accent);
+    border: 1px solid rgba(34, 211, 238, 0.25);
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   Light mode → Minimal Technical theme
+   Loaded on top of the dark blue tokens above. Replaces every
+   glass/glow/gradient treatment with flat white-on-grey surfaces.
+───────────────────────────────────────────────────────────────── */
+
+html[data-theme="light"] {
+    --bg:           #f5f6f8;
+    --bg-elev:      #ffffff;
+    --bg-soft:      rgba(17, 19, 30, 0.03);
+    --border:       #e2e4e9;
+    --border-soft:  #edeef1;
+    --text:         #111827;
+    --text-muted:   #4b5563;
+    --text-dim:     #9ca3af;
+    --accent:       #2563eb;
+    --accent-dark:  #1d4ed8;
+    --accent-soft:  rgba(37, 99, 235, 0.07);
+    --danger:       #dc2626;
+    --warning:      #d97706;
+    --medium:       #b45309;
+    --radius:       4px;
+    --radius-sm:    3px;
+}
+
+/* ── Body ── */
+html[data-theme="light"] body { background: var(--bg); color: var(--text); }
+
+/* ── Nav ── */
+html[data-theme="light"] .nav {
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+html[data-theme="light"] .nav-brand span { color: var(--accent); }
+html[data-theme="light"] .nav-links a:hover,
+html[data-theme="light"] .nav-links a.active { color: var(--accent); }
+
+/* ── Hero ── */
+html[data-theme="light"] .hero {
+    background: var(--bg-elev);
+    border-bottom: 1px solid var(--border);
+}
+html[data-theme="light"] .hero::after { display: none; }
+html[data-theme="light"] .hero-canvas { display: none; }
+
+html[data-theme="light"] .hero-title {
+    background: none;
+    -webkit-text-fill-color: var(--text);
+}
+html[data-theme="light"] .hero-eyebrow {
+    background: var(--accent-soft);
+    border-color: rgba(37, 99, 235, 0.2);
+    color: var(--accent);
+}
+html[data-theme="light"] .hero-scan-status {
+    background: var(--accent-soft);
+    border-color: rgba(37, 99, 235, 0.2);
+    color: var(--accent);
+}
+html[data-theme="light"] .hero-scan-dot {
+    background: var(--accent);
+    box-shadow: 0 0 6px rgba(37, 99, 235, 0.4);
+}
+html[data-theme="light"] .hero-badges span {
+    background: rgba(37, 99, 235, 0.06);
+    border-color: rgba(37, 99, 235, 0.18);
+    color: var(--accent);
+}
+
+/* ── Section eyebrows — strip the ◈ prefix ── */
+html[data-theme="light"] .section-eyebrow { color: var(--text-dim); }
+html[data-theme="light"] .section-eyebrow::before { content: none; }
+
+/* ── Pillar cards ── */
+html[data-theme="light"] .pillar {
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-top: 2px solid var(--accent);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: none;
+}
+html[data-theme="light"] .pillar::before { display: none; }
+html[data-theme="light"] .pillar:hover {
+    border-color: rgba(37, 99, 235, 0.3);
+    border-top-color: var(--accent);
+    background: var(--bg-elev);
+    transform: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+html[data-theme="light"] .pillar-num {
+    background: var(--accent-soft);
+    border: none;
+    box-shadow: none;
+    color: var(--accent);
+}
+html[data-theme="light"] .pillar-lede { color: var(--accent); opacity: 1; }
+html[data-theme="light"] .pillar-features li::before { background: var(--accent); }
+
+/* ── Generic cards ── */
+html[data-theme="light"] .card {
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+/* ── Proof metrics ── */
+html[data-theme="light"] .proof-metric {
+    background: var(--bg-elev);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+html[data-theme="light"] .proof-metric::before { display: none; }
+html[data-theme="light"] .proof-value { color: var(--text); text-shadow: none; }
+html[data-theme="light"] .proof-zero  { color: var(--accent); text-shadow: none; }
+
+/* ── Steps ── */
+html[data-theme="light"] .step {
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+html[data-theme="light"] .step::before { color: rgba(0, 0, 0, 0.06); }
+html[data-theme="light"] .step::after  { display: none; }
+html[data-theme="light"] .step-title   { color: var(--accent); }
+html[data-theme="light"] .step h3      { color: var(--text); }
+
+/* ── Pricing tiers ── */
+html[data-theme="light"] .tier.featured {
+    border-color: rgba(37, 99, 235, 0.4);
+    background: rgba(37, 99, 235, 0.04);
+}
+html[data-theme="light"] .tier li::before { color: var(--accent); }
+
+/* ── CTA block ── */
+html[data-theme="light"] .cta-block {
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+html[data-theme="light"] .cta-block::before { display: none; }
+
+/* ── Buttons ── */
+html[data-theme="light"] .btn-primary {
+    background: var(--accent);
+    color: #ffffff;
+    box-shadow: none;
+}
+html[data-theme="light"] .btn-primary:hover {
+    background: var(--accent-dark);
+    box-shadow: none;
+    transform: none;
+}
+html[data-theme="light"] .nav-links a.btn-primary,
+html[data-theme="light"] .nav-links a.btn-primary:hover { color: #ffffff; }
+
+html[data-theme="light"] .btn-outline {
+    background: var(--bg-elev);
+    border-color: var(--border);
+    color: var(--text);
+}
+html[data-theme="light"] .btn-outline:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--accent-soft);
+    box-shadow: none;
+}
+
+/* ── Footer ── */
+html[data-theme="light"] .footer {
+    background: var(--bg-elev);
+    border-top: 1px solid var(--border);
+}
+html[data-theme="light"] .footer-brand span { color: var(--accent); }
+html[data-theme="light"] .footer-col a:hover { color: var(--accent); }
+
+/* ── Theme toggle ── */
+html[data-theme="light"] .theme-toggle { border-color: var(--border); color: var(--text); }
+html[data-theme="light"] .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ── Findings inbox ── */
+html[data-theme="light"] .inbox-header {
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+}
+html[data-theme="light"] .inbox-row:hover { background: var(--bg); }
+html[data-theme="light"] .inbox-row--medium { border-left-color: var(--medium); }
+
+/* ── Live page ── */
+html[data-theme="light"] .filter-pill.active {
+    background: var(--accent-soft);
+    border-color: rgba(37, 99, 235, 0.35);
+    color: var(--accent);
+}
+html[data-theme="light"] .filter-pill:hover { border-color: var(--accent); color: var(--accent); }
+html[data-theme="light"] .feed-item:hover {
+    border-color: rgba(37, 99, 235, 0.25);
+    border-left-color: var(--accent);
+}
+html[data-theme="light"] .source-badge--otx {
+    background: var(--accent-soft);
+    color: var(--accent);
+    border-color: rgba(37, 99, 235, 0.2);
+}
