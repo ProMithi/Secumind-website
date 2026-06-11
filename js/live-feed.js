@@ -35,8 +35,13 @@
         return d.toLocaleDateString('en-GB', { day: '2-digit', month: 'short' });
     }
 
+    function defang(url) {
+        return url.replace(/^https?:\/\//i, 'hxxp[://]').replace(/\./g, '[.]');
+    }
+
     function fromURLhaus(u) {
-        const host = u.host || u.url.replace(/https?:\/\//, '').split('/')[0];
+        const rawHost = u.host || u.url.replace(/https?:\/\//i, '').split('/')[0];
+        const host    = rawHost.replace(/\./g, '[.]');
         const tags = (u.tags || []).slice(0, 5);
         const sev  = severityURLhaus(u);
         let   date = new Date(u.date_added + (u.date_added.endsWith('UTC') ? '' : ' UTC'));
